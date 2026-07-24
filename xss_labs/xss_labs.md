@@ -300,11 +300,11 @@ html同名属性解析规则：先到先得
 
 # level11
 
-![11](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\11.png)
+![11](photo/11.png)
 
 这一关有一个特殊的注入点，t_ref，值很有可能就是Referer头的值。
 
-![11.1](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\11.1.png)
+![11.1](photo/11.1.png)
 
 使用HackBar插件修改Referer请求头的值。
 
@@ -312,39 +312,39 @@ html同名属性解析规则：先到先得
 " onclick="alert()" type=""
 ```
 
-![11.2](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\11.2.png)
+![11.2](photo/11.2.png)
 
 # level12
 
-![12](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\12.png)
+![12](photo/12.png)
 
 特殊的注入点t_ua,值是user agent 请求头
 
-![12.1](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\12.1.png)
+![12.1](photo/12.1.png)
 
 修改User Agent请求头的值
 
-![12.2](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\12.2.png)
+![12.2](photo/12.2.png)
 
 # level13
 
-![13](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\13.png)
+![13](photo/13.png)
 
 特殊注入点，t_cook，值很有可能是cookie的值。
 
-![13.1](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\13.1.png)
+![13.1](photo/13.1.png)
 
-![12.3](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\12.3.png)
+![12.3](photo/12.3.png)
 
 显示的内容是cookie的user键的值，因此，注入点是cookie请求头的user键
 
 修改cookie请求头的user键的值
 
-![12.4](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\12.4.png)
+![12.4](photo/12.4.png)
 
 # level14
 
-!![14](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\14.png)
+!![14](photo/14.png)
 
 注入点是src，但发现 " 经过了html特殊字符编码，没办法实现闭合。
 
@@ -360,9 +360,9 @@ ng-include :后面的链接要用引号包裹。
 'http://192.168.220.191/xss_lab/level1.php?name=<script>alert()</script>'
 ```
 
-![14.1](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\14.1.png)
+![14.1](photo/14.1.png)
 
-![14.2](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\14.2.png)
+![14.2](photo/14.2.png)
 
 发现成功导入html片段，但是<script>并没有被执行。
 
@@ -380,7 +380,7 @@ ng-include :后面的链接要用引号包裹。
 
 图片加载失败，自动触发事件。
 
-![14.6](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\14.6.png)
+![14.6](photo/14.6.png)
 
 ```
 'http://192.168.220.191/xss_lab/level1.php?name=<img src=1 onmouseover="alert()">'
@@ -388,7 +388,7 @@ ng-include :后面的链接要用引号包裹。
 
 将鼠标放在加载失败的图片上，触发事件。
 
-![14.3](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\14.3.png)
+![14.3](photo/14.3.png)
 
 ```
 'http://192.168.220.191/xss_lab/level1.php?name=<input onfocus="alert()">'
@@ -396,7 +396,7 @@ ng-include :后面的链接要用引号包裹。
 
 点击搜索框，触发事件。
 
-![14.4](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\14.4.png)
+![14.4](photo/14.4.png)
 
 ```
 'http://192.168.220.191/xss_lab/level1.php?name=<a href="javascript:alert()">'
@@ -404,7 +404,7 @@ ng-include :后面的链接要用引号包裹。
 
 点击超链接，触发javascript协议的脚本。
 
-![14.5](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\14.5.png)
+![14.5](photo/14.5.png)
 
 # level15
 
@@ -412,7 +412,7 @@ ng-include :后面的链接要用引号包裹。
 <img src=1 onerror="alert()">
 ```
 
-![15](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\15.png)
+![15](photo/15.png)
 
 可见<>并没有进行特殊字符编码，但 空格 进行了特殊字符编码。
 
@@ -443,13 +443,13 @@ ng-include :后面的链接要用引号包裹。
 <img%0Asrc=1%0Aonerror="alert()">
 ```
 
-![15.1](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\15.1.png)
+![15.1](photo/15.1.png)
 
 成功绕过空格的替换。
 
 # level18
 
-![18](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\18.png)
+![18](photo/18.png)
 
 可以尝试 > 封闭标签
 
@@ -457,7 +457,7 @@ ng-include :后面的链接要用引号包裹。
 arg02=><script%3Ealert()</script>
 ```
 
-![18.1](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\18.1.png)
+![18.1](photo/18.1.png)
 
 发现，<>进行了特殊字符处理。
 
@@ -471,7 +471,7 @@ arg02=><script%3Ealert()</script>
 
 部分浏览器不会显示<embed>，比如Firefox。使用chrome浏览器会显示<embed>标签。
 
-![18.3](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\18.3.png)
+![18.3](photo/18.3.png)
 
 
 
@@ -481,7 +481,7 @@ arg02=><script%3Ealert()</script>
  arg02=onmouseover="alert()"
 ```
 
-![18.2](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\18.2.png)
+![18.2](photo/18.2.png)
 
 发现 " 进行了特殊字符编码。
 
@@ -506,4 +506,4 @@ arg02=><script%3Ealert()</script>
 arg02= onmouseover=alert()
 ```
 
-![18.4](C:\Users\Zhang\OneDrive\Desktop\github\Cyber-Range-Notes\xss_labs\photo\18.4.png)
+![18.4](photo/18.4.png)
